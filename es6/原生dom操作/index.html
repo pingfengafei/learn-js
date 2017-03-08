@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+    /**
+     * 0 : between XMLHttpRequest && xhr.open
+     * 1 : open函数调用
+     * 2 : header获取
+     * 3 : 下载responseText
+     * 4 : 下载完成
+     */
+
+    const UNSET = 0, OPENED = 1, HEADERS_RECEIVED = 2, LOADING = 3, DONE = 4;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://127.0.0.1:3001/list');
+    xhr.send(null);
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === DONE) {
+            insertNode(JSON.parse(xhr.responseText));
+        }
+    };
+
+    function insertNode(list) {
+        console.log(list);
+        console.log(Object.prototype.toString.call(list));
+        const body = document.getElementsByTagName('body')[0];
+        list.forEach((val, index) => {
+            const node = document.createElement('ul');
+            const text = document.createTextNode(val);
+            node.appendChild(text);
+            body.appendChild(node);
+        });
+    }
+
+</script>
+</body>
+</html>
