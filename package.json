@@ -4,12 +4,30 @@
   "description": "",
   "main": "apply_call.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "better-npm-run start",
+    "build": "better-npm-run build"
+  },
+  "betterScripts": {
+    "start": {
+      "command": "webpack-dev-server --hot  --colors --history-api-fallback ",
+      "env": {
+        "NODE_ENV": "develop"
+      }
+    },
+    "build": {
+      "command": "webpack --color --progress",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^15.4.2"
+    "classnames": "^2.2.5",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -22,6 +40,8 @@
     "babel-preset-stage-1": "^6.22.0",
     "babel-preset-stage-2": "^6.22.0",
     "babel-preset-stage-3": "^6.22.0",
+    "better-npm-run": "0.0.14",
+    "clean-webpack-plugin": "^0.1.15",
     "css-loader": "^0.26.2",
     "eslint": "^3.16.1",
     "eslint-loader": "^1.6.3",
