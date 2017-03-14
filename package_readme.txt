@@ -40,3 +40,4 @@ BannerPlugin 给每个生成的块添加横幅，标语
 webpack cli更加严格了，具体我也不懂
 
 CommonsChunkPlugin : 分离出文件
+
