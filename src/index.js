@@ -12,3 +12,24 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+
+var a = {
+  "login": [
+    {
+      longitude: '',
+      latitude: '',
+      country: '',
+      province: '',
+      city: ''
+    }
+  ],
+  "transaction": [
+    {
+      longitude: '',
+      latitude: '',
+      country: '',
+      province: '',
+      city: ''
+    }
+  ]
+}
